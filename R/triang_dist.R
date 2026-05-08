@@ -12,8 +12,8 @@
 #' @return numeric vector with density values.
 #' @export
 dtriang <- function(x, lower, upper, mode) {
-  if (lower > upper) {
-    stop("`lower` must be <= `upper`")
+  if (lower >= upper) {
+    stop("`lower` must be < `upper`")
   }
   if (mode < lower || mode > upper) {
     stop("`mode` must be within [lower, upper]")
@@ -48,8 +48,8 @@ dtriang <- function(x, lower, upper, mode) {
 #' @return numeric vector with cumulative probabilities.
 #' @export
 ptriang <- function(q, lower, upper, mode) {
-  if (lower > upper) {
-    stop("`lower` must be <= `upper`")
+  if (lower >= upper) {
+    stop("`lower` must be < `upper`")
   }
   if (mode < lower || mode > upper) {
     stop("`mode` must be within [lower, upper]")
@@ -84,8 +84,8 @@ ptriang <- function(q, lower, upper, mode) {
 #' @return numeric vector of quantiles.
 #' @export
 qtriang <- function(p, lower, upper, mode) {
-  if (lower > upper) {
-    stop("`lower` must be <= `upper`")
+  if (lower >= upper) {
+    stop("`lower` must be < `upper`")
   }
   if (mode < lower || mode > upper) {
     stop("`mode` must be within [lower, upper]")
@@ -116,8 +116,8 @@ qtriang <- function(p, lower, upper, mode) {
 #' @return numeric vector of random samples.
 #' @export
 rtriang <- function(n, lower, upper, mode) {
-  if (lower > upper) {
-    stop("`lower` must be <= `upper`")
+  if (lower >= upper) {
+    stop("`lower` must be < `upper`")
   }
   if (mode < lower || mode > upper) {
     stop("`mode` must be within [lower, upper]")
